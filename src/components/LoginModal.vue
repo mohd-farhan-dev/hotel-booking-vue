@@ -1,5 +1,5 @@
 <template>
-  <div class="layer">
+  <div class="login-modal-wrapper-root">
     <div class="login-modal">
       <div class="modal-header">
         <h2>
@@ -38,10 +38,10 @@ export default {
 }
 </script>
 
-<style lang="scss" scoped>
-@import '@/styles.scss';
+<style lang="scss">
 
-.layer{
+
+.login-modal-wrapper-root{
   position: absolute;
   background-color: rgba($color: #000, $alpha: 0.2);
   top: 0;
@@ -100,5 +100,14 @@ export default {
     }
   }
 }
+
+@media screen and (max-width: 576px) {
+  .login-modal-wrapper-root{
+    .login-modal{
+      width: 400px;
+    }
+  }
+}
+
 
 </style>

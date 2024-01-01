@@ -6,23 +6,13 @@
   font-family: 'Poppins', sans-serif;
 }
 
-@mixin flexbox ($fd, $jc, $ai){
-  display: flex;
-  flex-direction: $fd;
-  justify-content: $jc;
-  align-items: $ai;
-}
-
-.active {
-  color: black;
-}
-
 .btn-outline-dark {
   padding: 8px 15px;
   background-color: #fff;
   border: 1px solid black;
   border-radius: 5px;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 500;
   cursor: pointer;
 }
 
@@ -33,4 +23,11 @@
   border-radius: 5px;
   font-size: 14px;
   cursor: pointer;
+}
+
+.hamburger-icon{
+  background-color: transparent;
+  border: none;
+  font-size: 32px;
+  display: none;
 }

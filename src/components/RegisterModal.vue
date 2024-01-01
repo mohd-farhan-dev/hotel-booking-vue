@@ -1,5 +1,5 @@
 <template>
-  <div class="layer">
+  <div class="register-modal-wrapper-root">
     <div class="register-modal">
       <div class="modal-header">
         <h2>
@@ -69,23 +69,17 @@
 <script>
 export default {
   name: 'RegisterModal',
-  data(){
-    return{
-      active : false
-    }
-  },
   methods:{
     closeModal(){
-      this.$emit('close-register-modal');
+      this.$emit('close-modal');
     }
   }
 }
 </script>
 
-<style lang="scss" scoped>
-@import '@/styles.scss';
+<style lang="scss">
 
-.layer{
+.register-modal-wrapper-root{
   position: absolute;
   background-color: rgba($color: #000, $alpha: 0.2);
   top: 0;
@@ -173,5 +167,64 @@ export default {
     }
   }
 }
+
+
+
+@media screen and (max-width: 992px) {
+  .register-modal-wrapper-root{
+    .register-modal{
+      width: 700px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .register-modal-wrapper-root{
+    .register-modal{
+      width: 550px;
+    }
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .register-modal-wrapper-root{
+    .register-modal{
+      background-color: #fff;
+      width: 400px;
+      position: absolute;
+      top: 65%;
+      
+      .modal-header{
+        h2{
+          font-size: 22px;
+        }
+      }
+      .modal-header, .modal-footer{
+        padding: 10px 15px;
+      }
+    
+      .modal-body{
+        padding: 5px 10px;
+        .note{
+          font-size: 12px;
+          font-weight: 600;
+          text-align: center;
+          margin-bottom: 15px;
+        }
+        .row{
+          flex-direction: column;
+
+          .col-12{
+            width: 100%;
+          }
+          .col{
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
 
 </style>
