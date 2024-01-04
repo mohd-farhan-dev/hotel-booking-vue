@@ -1,13 +1,14 @@
 <template>
   <div class="carousel">
-    <CarouselSlide  v-for="(slide, index) in slides" :key="slide" :index="index" :visibleSlide="visibleSlide">
-      <img :src="getImagePath(slide)">
-    </CarouselSlide>
+    <div v-for="(slide, index) in slides" :key="slide">
+      <div v-show="activeSlide === index">
+        <img :src="require('@/assets/carousel/'+slide)">
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import CarouselSlide from '@/components/CarouselSlide.vue';
 export default {
   name : 'CarouselComp',
   data(){
@@ -20,32 +21,21 @@ export default {
         '5.png',
         '6.png'
       ],
-      visibleSlide : 0
+      activeSlide : 0
     }
-  },
-  computed:{
-    getSlideLength(){
-      return this.slides.length
-    }
-  },
-  methods:{
-    getImagePath(image) {
-      return require(`@/assets/carousel/${image}`);
-    },
-    slideTransition(){
-      if(this.visibleSlide >= this.getSlideLength - 1){
-        this.visibleSlide = 0;
-      }
-      else{
-        this.visibleSlide++;
-      }
-    }
-  },
-  components:{
-    CarouselSlide
   },
   mounted(){
     setInterval(this.slideTransition, 6000);
+  },
+  methods:{
+    slideTransition(){
+      if(this.activeSlide >= this.slides.length - 1){
+        this.activeSlide = 0;
+      }
+      else{
+        this.activeSlide++;
+      }
+    }
   }
 }
 </script>
@@ -57,8 +47,11 @@ export default {
   position: relative;
   width: 100%;
 
-  img{
-    width: 100%;
+  div{ 
+    img{
+      width: 100%;
+    }
   }
+    
 }
 </style>
