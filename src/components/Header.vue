@@ -21,8 +21,8 @@
 </template>
 
 <script>
-import LoginModal from "@components/LoginModal.vue";
-import RegisterModal from "@components/RegisterModal.vue";
+import LoginModal from "@/components/LoginModal.vue";
+import RegisterModal from "@/components/RegisterModal.vue";
 
 export default {
   name: "HeaderComp",
@@ -114,6 +114,7 @@ header {
     }
     
     .navbar-wrapper{
+      display: none;
       flex-direction: column;
       justify-content: start;
       align-items: start;
