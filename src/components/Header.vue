@@ -123,7 +123,8 @@ header {
       left: 0;
       width: 100%;
       padding: 10px 15px;
-      display: none;
+      background-color: #fff;
+      z-index: 1001;
 
       nav {
         a {

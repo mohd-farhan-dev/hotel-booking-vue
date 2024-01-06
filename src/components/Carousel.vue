@@ -54,4 +54,11 @@ export default {
   }
     
 }
+
+
+@media (max-width:962px) {
+  .carousel{
+    padding: 5px 15px;
+  }
+}
 </style>
