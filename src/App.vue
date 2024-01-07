@@ -1,6 +1,6 @@
 <template>
-  <HeaderComp />
-  <CarouselComp />
+  <Header />
+  <Carousel />
   <BookingAvailability />
 
   <h1>OUR ROOMS</h1>
@@ -13,16 +13,16 @@
 
 <script>
 import { roomData } from "@/roomdata.js";
-import HeaderComp from "@/components/Header.vue";
-import CarouselComp from "@/components/Carousel.vue";
+import Header from "@/components/Header.vue";
+import Carousel from "@/components/Carousel.vue";
 import BookingAvailability from "@/components/BookingAvailability.vue";
 import RoomCard from "@/components/RoomCard.vue";
 
 export default {
   name: 'App',
   components:{
-    HeaderComp,
-    CarouselComp,
+    Header,
+    Carousel,
     BookingAvailability,
     RoomCard
   },

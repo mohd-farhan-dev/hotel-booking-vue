@@ -1,7 +1,7 @@
 export const roomData = [
   {
     id : 1,
-    img : '1.jpg',
+    thumbnail : '1.jpg',
     name : 'Simple Room',
     price : '555  per night',
     features : ['Bedroom','Balcony','Kitchen'],
@@ -10,7 +10,7 @@ export const roomData = [
   },
   {
     id : 2,
-    img : 'IMG_11892.png',
+    thumbnail : 'IMG_11892.png',
     name : 'Deluxe Room',
     price : '999  per night',
     features : ['Bedroom','Balcony','Kitchen'],
@@ -19,7 +19,7 @@ export const roomData = [
   },
   {
     id : 3,
-    img : 'IMG_26168.png',
+    thumbnail : 'IMG_26168.png',
     name : 'Premium Room',
     price : '1999  per night',
     features : ['Bedroom','Balcony','Kitchen'],

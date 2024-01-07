@@ -1,6 +1,6 @@
 <template>
   <div class="room-card">
-    <img :src="require('@/assets/rooms/'+roomData.img)">
+    <img :src="require('@/assets/rooms/'+roomData.thumbnail)">
     <div class="room-content">
       <h3>{{ roomData.name }}</h3>
       <h4 class="room-price">{{ roomData.price }}</h4>
