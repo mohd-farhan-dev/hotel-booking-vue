@@ -9,14 +9,34 @@
       <RoomCard :roomData="room" />
     </div>
   </div>
+  <a href="#" class="btn-outline-dark-square">More Rooms >>></a>
+
+  <h1>OUR FACILITIES</h1>
+  <div class="facilities-section">
+    <div v-for="facility in facilities" :key="facility.id">
+      <FacilityCard :facilityData="facility" />
+    </div>
+  </div>
+  <a href="#" class="btn-outline-dark-square">More Facilities >>></a>
+
+  <h1>TESTIMONIALS</h1>
+  <div>
+    <TestimonialCard />
+  </div>
+  <a href="#" class="btn-outline-dark-square">Know More >>></a>
 </template>
 
 <script>
 import { roomData } from "@/roomdata.js";
+import { facilityData } from "@/facilityData.js";
+
 import Header from "@/components/Header.vue";
 import Carousel from "@/components/Carousel.vue";
 import BookingAvailability from "@/components/BookingAvailability.vue";
 import RoomCard from "@/components/RoomCard.vue";
+import FacilityCard from "@/components/Facility.vue";
+import TestimonialCard from "@/components/Testimonial.vue";
+
 
 export default {
   name: 'App',
@@ -24,11 +44,14 @@ export default {
     Header,
     Carousel,
     BookingAvailability,
-    RoomCard
+    RoomCard,
+    FacilityCard,
+    TestimonialCard
   },
   data(){
     return{
-      rooms : roomData
+      rooms : roomData,
+      facilities :facilityData 
     }
   }
 }
@@ -42,17 +65,25 @@ h1{
   margin-bottom:40px;
 }
 
-.room-section{  
+a{
+  display: block;
+  width: fit-content;
+  margin: 0 auto;
+  margin-bottom: 60px;
+}
+
+.room-section, .facilities-section{  
   width: 80%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 50px;
 }
 
 @media (max-width : 962px){
-  .room-section{
+  .room-section, .facilities-section{
     justify-content: center;
   }
 }

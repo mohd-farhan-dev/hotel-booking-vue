@@ -24,6 +24,20 @@ $teal-hover : #279e8c;
   }
 }
 
+.btn-outline-dark-square{
+  padding: 5px 10px;
+  background-color: #fff;
+  border: 1px solid black;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+
+  &:hover{
+    background-color: black;
+    color: #fff;
+  }
+}
+
 .btn-dark {
   padding: 8px 15px;
   background-color: black;
