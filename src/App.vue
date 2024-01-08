@@ -24,6 +24,12 @@
     <TestimonialCard />
   </div>
   <a href="#" class="btn-outline-dark-square">Know More >>></a>
+
+  <h1>REACH US</h1>
+  <ReachUs />
+  <Footer />
+
+  <p class="copyright">Designed & Developed by Mohd Farhan Ansari</p>
 </template>
 
 <script>
@@ -36,6 +42,8 @@ import BookingAvailability from "@/components/BookingAvailability.vue";
 import RoomCard from "@/components/RoomCard.vue";
 import FacilityCard from "@/components/Facility.vue";
 import TestimonialCard from "@/components/Testimonial.vue";
+import ReachUs from "@/components/ReachUs.vue";
+import Footer from "@/components/Footer.vue";
 
 
 export default {
@@ -46,7 +54,9 @@ export default {
     BookingAvailability,
     RoomCard,
     FacilityCard,
-    TestimonialCard
+    TestimonialCard,
+    ReachUs,
+    Footer
   },
   data(){
     return{
@@ -80,6 +90,14 @@ a{
   align-items: center;
   flex-wrap: wrap;
   margin-bottom: 50px;
+}
+
+.copyright{
+  background-color: black;
+  color: white;
+  text-align: center;
+  font-size: 16px;
+  padding: 10px 0;
 }
 
 @media (max-width : 962px){

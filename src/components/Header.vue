@@ -59,6 +59,7 @@ header {
   align-items: center;
   padding: 10px 30px;
   box-shadow: 2px 5px 5px #f0f0f0;
+  background-color: #fff;
 
   h1 {
     font-family: 'Merienda', cursive;
