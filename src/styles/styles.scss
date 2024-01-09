@@ -6,6 +6,10 @@
   font-family: 'Poppins', sans-serif;
 }
 
+body{
+  background-color: #f0f0f0;
+}
+
 $teal : #2ec1ac;
 $teal-hover : #279e8c; 
 
@@ -16,6 +20,20 @@ $teal-hover : #279e8c;
   border-radius: 3px;
   font-size: 15px;
   font-weight: 500;
+  cursor: pointer;
+
+  &:hover{
+    background-color: black;
+    color: #fff;
+  }
+}
+
+.btn-outline-dark-square{
+  padding: 5px 10px;
+  background-color: #fff;
+  border: 1px solid black;
+  font-size: 14px;
+  font-weight: 600;
   cursor: pointer;
 
   &:hover{
