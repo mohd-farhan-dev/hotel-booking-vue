@@ -1,25 +1,26 @@
 <template>
   <div class="room-card">
-    <img :src="require('@/assets/rooms/'+roomData.thumbnail)">
+    <img :src="require('@/assets/rooms/'+data.thumbnail)">
     <div class="room-content">
-      <h3>{{ roomData.name }}</h3>
-      <h4 class="room-price">{{ roomData.price }}</h4>
+      <h3>{{ data.name }}</h3>
+      <h4 class="room-price">{{ data.price }}</h4>
       <h4>Features</h4>
       <div class="features">
-        <span v-for="feature in roomData.features" :key="feature" >{{ feature }}</span> 
+        <span v-for="feature in data.features" :key="feature" >{{ feature }}</span> 
       </div>
       <h4>Facilities</h4>
       <div class="facilities">
-        <span v-for="facility in roomData.facilities" :key="facility" >{{ facility }}</span> 
+        <span v-for="facility in data.facilities" :key="facility" >{{ facility }}</span> 
       </div>
       <h4>Guests</h4>
       <div class="guests">
-        <span v-for="guest in roomData.guests" :key="guest" >{{ guest }}</span> 
+        <span v-for="guest in data.guests" :key="guest" >{{ guest }}</span> 
       </div>
       <h4>Rating</h4>
       <div class="rating">
-        <span class="rating-icon"><i class="bi bi-star-fill"></i></span>
-        <span class="rating-icon"><i class="bi bi-star-fill"></i></span>
+        <span class="rating-icon" v-for="star in data.rating" :key="star">
+          <i :class="star"></i>
+        </span>
       </div>
       <div class="btns">
         <button class="teal-btn">Book Now</button>
@@ -33,7 +34,7 @@
 export default {
   name: 'RoomCard',
   props:{
-    roomData : Object
+    data : Object
   }
 }
 </script>

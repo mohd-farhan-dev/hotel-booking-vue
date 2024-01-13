@@ -1,24 +1,18 @@
 <template>
   <swiper
     :modules="modules"
-    :effect="coverflow"
+    :effect="'coverflow'"
     :centered-slides="true"
     :grabCursor="true"
     :slides-per-view="3"
-    :space-between="20"
     :loop="true"
-    :pagination="{clickable: true}"
-    :autoplay="{
-      delay:7000,
-      disableOnIntreraction: false,
-      pauseOnMouseEnter: true
-    }"
-    :coverflow-effect="{
+    :pagination="true"
+    :coverflowEffect="{
       rotate: 50,
       stretch: 0,
       depth: 100,
       modifier: 1,
-      slideShadows: false,
+      slideShadows: true,
     }"
     :breakpoints="{
       320:{
@@ -42,35 +36,34 @@
         <h4>{{ testimonial.name }}</h4>
       </div>
       <p>{{ testimonial.description }}</p>
-      <span>
-        <i class="bi bi-star-fill"></i>
-        <i class="bi bi-star-fill"></i>
-        <i class="bi bi-star-fill"></i>
+      <span v-for="star in testimonial.rating" :key="star">
+        <i :class="star"></i>
       </span>
     </swiper-slide>
   </swiper>
 </template>
 
 <script>
-  import { TestimonialData } from '@/TestimonialData'
+  import { testimonialData } from '@/websiteData.js'
   import { Swiper, SwiperSlide } from 'swiper/vue';
-  import { Autoplay, Pagination, EffectCoverflow, Navigation } from 'swiper/modules';
+  import { Pagination, EffectCoverflow } from 'swiper/modules';
 
   // Import Swiper styles
   import 'swiper/css';
   import 'swiper/css/pagination';
+  import 'swiper/css/effect-coverflow';
 
 
   export default {
-    name : 'TestimonialCard',
+    name : 'Testimonials',
     components: {
       Swiper,
       SwiperSlide,
     },
     data(){
       return{
-        modules:[Pagination, Autoplay, EffectCoverflow, Navigation],
-        testimonials : TestimonialData
+        modules:[Pagination, EffectCoverflow],
+        testimonials : testimonialData
       }
     }
   };
@@ -78,7 +71,7 @@
 </script>
 
 
-<style>
+<style scoped>
 .swiper-container{
   width: 80%;
   margin: 0 auto;
@@ -88,7 +81,7 @@
     background-color: #fff;
     border-radius: 5px;
     padding: 20px;
-    box-shadow: 5px 10px 20px #f0f0f0, -5px -10px 20px #f0f0f0;
+    box-shadow: 2px 5px 10px #f0f0f0, -2px -5px 10px #f0f0f0;
     .profile{
       display: flex;
       justify-content: flex-start;

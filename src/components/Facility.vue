@@ -1,7 +1,7 @@
 <template>
   <div class="facility">
-    <img :src="require('@/assets/facilities/'+facilityData.thumbnail)">
-    <p>{{ facilityData.name }}</p>
+    <img :src="require('@/assets/facilities/'+data.thumbnail)">
+    <p>{{ data.name }}</p>
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 export default {
   name: 'FacilityCard',
   props:{
-    facilityData:Object
+    data:Object
   }
 }
 </script>

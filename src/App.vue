@@ -6,7 +6,7 @@
   <h1>OUR ROOMS</h1>
   <div class="room-section">
     <div v-for="room in rooms" :key="room.id">
-      <RoomCard :roomData="room" />
+      <RoomCard :data="room" />
     </div>
   </div>
   <a href="#" class="btn-outline-dark-square">More Rooms >>></a>
@@ -14,14 +14,14 @@
   <h1>OUR FACILITIES</h1>
   <div class="facilities-section">
     <div v-for="facility in facilities" :key="facility.id">
-      <FacilityCard :facilityData="facility" />
+      <FacilityCard :data="facility" />
     </div>
   </div>
   <a href="#" class="btn-outline-dark-square">More Facilities >>></a>
 
   <h1>TESTIMONIALS</h1>
   <div>
-    <TestimonialCard />
+    <Testimonials />
   </div>
   <a href="#" class="btn-outline-dark-square">Know More >>></a>
 
@@ -33,15 +33,14 @@
 </template>
 
 <script>
-import { roomData } from "@/roomdata.js";
-import { facilityData } from "@/facilityData.js";
+import { roomData, facilityData } from "@/websiteData.js";
 
 import Header from "@/components/Header.vue";
 import Carousel from "@/components/Carousel.vue";
 import BookingAvailability from "@/components/BookingAvailability.vue";
 import RoomCard from "@/components/RoomCard.vue";
 import FacilityCard from "@/components/Facility.vue";
-import TestimonialCard from "@/components/Testimonial.vue";
+import Testimonials from "@/components/Testimonial.vue";
 import ReachUs from "@/components/ReachUs.vue";
 import Footer from "@/components/Footer.vue";
 
@@ -54,7 +53,7 @@ export default {
     BookingAvailability,
     RoomCard,
     FacilityCard,
-    TestimonialCard,
+    Testimonials,
     ReachUs,
     Footer
   },
