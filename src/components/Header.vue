@@ -3,11 +3,11 @@
     <h1>HB WEBSITE</h1>
     <div class="navbar-wrapper" :class="{block:showNavBar}">
       <nav>
-        <a href="#">Home</a>
-        <a href="#">Rooms</a>
-        <a href="#">Facilities</a>
-        <a href="#">Contact us</a>
-        <a href="#">About</a>
+        <router-link to="/">Home</router-link>
+        <router-link to="/Rooms">Rooms</router-link>
+        <router-link to="/">Facilities</router-link>
+        <router-link to="/">Contact us</router-link>
+        <router-link to="/">About</router-link>
       </nav>
       <div class="btns">
         <button class="btn-outline-dark" @click="toggleLoginModal" >Login</button>

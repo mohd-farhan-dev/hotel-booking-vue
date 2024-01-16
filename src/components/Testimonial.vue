@@ -36,8 +36,8 @@
         <h4>{{ testimonial.name }}</h4>
       </div>
       <p>{{ testimonial.description }}</p>
-      <span v-for="star in testimonial.rating" :key="star">
-        <i :class="star"></i>
+      <span v-for="star in testimonial.ratings" :key="star">
+        <i class="bi bi-star-fill"></i>
       </span>
     </swiper-slide>
   </swiper>

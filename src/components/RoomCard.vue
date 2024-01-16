@@ -14,12 +14,13 @@
       </div>
       <h4>Guests</h4>
       <div class="guests">
-        <span v-for="guest in data.guests" :key="guest" >{{ guest }}</span> 
+        <span>{{ data.guests.adults }} Adults</span> 
+        <span>{{ data.guests.childrens }} Childrens</span> 
       </div>
       <h4>Rating</h4>
       <div class="rating">
-        <span class="rating-icon" v-for="star in data.rating" :key="star">
-          <i :class="star"></i>
+        <span class="rating-icon" v-for="star in data.ratings" :key="star">
+          <i class="bi bi-star-fill"></i>
         </span>
       </div>
       <div class="btns">
@@ -39,7 +40,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 .room-card{
   width: 350px;
