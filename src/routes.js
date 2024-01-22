@@ -1,8 +1,8 @@
 import { createRouter, createWebHistory } from "vue-router";
 
 import HomePage from '@/components/HomePage';
-import Rooms from '@/components/Rooms';
-import RoomDetails from '@/components/RoomDetails';
+import RoomsPage from '@/components/RoomsPage';
+import RoomDetailsPage from '@/components/RoomDetailsPage';
 
 const router = createRouter({
   routes : [
@@ -11,12 +11,12 @@ const router = createRouter({
       component : HomePage
     },
     {
-      path : '/Rooms',
-      component : Rooms
+      path : '/RoomsPage',
+      component : RoomsPage
     },
     {
-      path : '/RoomDetails/:id',
-      component : RoomDetails
+      path : '/RoomDetailsPage/:id',
+      component : RoomDetailsPage
     }
   ],
   history : createWebHistory()

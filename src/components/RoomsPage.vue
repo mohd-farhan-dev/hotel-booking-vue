@@ -11,7 +11,7 @@
         FILTERS
         <i @click="toggleFilter" class="bi bi-list"></i>
       </h2>
-      <div class="form-container" :class="{block:showToggleFilter}">
+      <div class="form-container" :class="{block:showFilters}">
         <form>
           <h3>CHECK AVAILABILITY</h3>
           <div class="checkin-checkout-box">
@@ -51,7 +51,7 @@
     </div>
 
     <div class="rooms-section">
-      <HorizontalRoomCard v-for="room in roomData" :key="room.id" :data="room"/>
+      <HorizontalRoomCard v-for="room in roomData" :key="room.id" :data="room" :horizontal="true"/>
     </div>
   </div>
   <Footer />
@@ -72,12 +72,12 @@ export default {
   data(){
     return{
       roomData : roomData,
-      showToggleFilter : false
+      showFilters : false
     }
   },
   methods:{
     toggleFilter(){
-      this.showToggleFilter = !this.showToggleFilter
+      this.showFilters = !this.showFilters
     }
   }
 }

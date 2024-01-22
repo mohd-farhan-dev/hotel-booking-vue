@@ -41,66 +41,64 @@ export default {
 </script>
 
 <style scoped>
+  .room-card{
+    width: 350px;
+    margin-bottom: 50px;
+    background-color: white;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 5px 10px 20px #f0f0f0, -5px -10px 20px #f0f0f0;
 
-.room-card{
-  width: 350px;
-  margin-bottom: 50px;
-  background-color: white;
-  border-radius: 5px;
-  overflow: hidden;
-  box-shadow: 5px 10px 20px #f0f0f0, -5px -10px 20px #f0f0f0;
+    img{
+      width: 100%;
+    }
 
-  img{
-    width: 100%;
+    .room-content{
+      padding: 15px;
+
+      h3,h4{
+        margin-bottom: 8px;
+      }
+
+      .room-price{
+        margin-bottom: 15px;
+      }
+
+      .features, .facilities, .guests{
+        margin-bottom: 12px;
+
+        span{
+          background-color: #f0f0f0;
+          color: #000;
+          border-radius: 4px;
+          padding: 2px 5px;
+          margin-right: 5px;
+          font-size: 12px;
+          font-weight: bold;
+        }
+      }
+
+
+      .rating{
+        margin-bottom: 12px;
+
+        .rating-icon{
+          margin-right: 4px;
+          color: gold;
+        }
+      }
+
+      .btns{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-bottom: 10px;
+
+        button{
+          padding: 6px 10px;
+          font-weight: 600;
+        }
+      }
+    }
   }
-
-  .room-content{
-    padding: 15px;
-
-    h3,h4{
-      margin-bottom: 8px;
-    }
-
-    .room-price{
-      margin-bottom: 15px;
-    }
-
-    .features, .facilities, .guests{
-      margin-bottom: 12px;
-
-      span{
-        background-color: #f0f0f0;
-        color: #000;
-        border-radius: 4px;
-        padding: 2px 5px;
-        margin-right: 5px;
-        font-size: 12px;
-        font-weight: bold;
-      }
-    }
-
-
-    .rating{
-      margin-bottom: 12px;
-
-      .rating-icon{
-        margin-right: 4px;
-        color: gold;
-      }
-    }
-
-    .btns{
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      margin-bottom: 10px;
-
-      button{
-        padding: 6px 10px;
-        font-weight: 600;
-      }
-    }
-  }
-}
-
 </style>

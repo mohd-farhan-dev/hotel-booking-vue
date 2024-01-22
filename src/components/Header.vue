@@ -4,7 +4,7 @@
     <div class="navbar-wrapper" :class="{block:showNavBar}">
       <nav>
         <router-link to="/">Home</router-link>
-        <router-link to="/Rooms">Rooms</router-link>
+        <router-link to="/RoomsPage">Rooms</router-link>
         <router-link to="/">Facilities</router-link>
         <router-link to="/">Contact us</router-link>
         <router-link to="/">About</router-link>

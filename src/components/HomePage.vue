@@ -6,7 +6,7 @@
   <h1>OUR ROOMS</h1>
   <div class="room-section">
     <div v-for="room in rooms" :key="room.id">
-      <RoomCard :data="room" />
+      <HorizontalRoomCard :data="room" :horizontal="false" />
     </div>
   </div>
   <a href="#" class="btn-outline-dark-square">More Rooms >>></a>
@@ -20,9 +20,8 @@
   <a href="#" class="btn-outline-dark-square">More Facilities >>></a>
 
   <h1>TESTIMONIALS</h1>
-  <div>
-    <Testimonials />
-  </div>
+  <Testimonials />
+  
   <a href="#" class="btn-outline-dark-square">Know More >>></a>
 
   <h1>REACH US</h1>
@@ -36,11 +35,11 @@ import { roomData, facilityData } from "@/websiteData.js";
 import Header from "@/components/Header.vue";
 import Carousel from "@/components/Carousel.vue";
 import BookingAvailability from "@/components/BookingAvailability.vue";
-import RoomCard from "@/components/RoomCard.vue";
 import FacilityCard from "@/components/Facility.vue";
 import Testimonials from "@/components/Testimonial.vue";
 import ReachUs from "@/components/ReachUs.vue";
 import Footer from "@/components/Footer.vue";
+import HorizontalRoomCard from "./HorizontalRoomCard.vue";
 
 
 export default {
@@ -49,12 +48,12 @@ export default {
     Header,
     Carousel,
     BookingAvailability,
-    RoomCard,
     FacilityCard,
     Testimonials,
     ReachUs,
-    Footer
-  },
+    Footer,
+    HorizontalRoomCard
+},
   data(){
     return{
       rooms : roomData,

@@ -1,11 +1,12 @@
 <template>
-  <div class="room-card">
-    <div class="room-img">
+  <div class="room-card" :class="{horizontalroomcard : horizontal}">
+    <div class="room-img" :class="{hor_room_img : horizontal}">
       <img :src="require('@/assets/rooms/'+data.thumbnail)">
     </div>
-    <div class="room-content">
+    <div class="room-content" :class="{hor_room_content : horizontal}">
       <div class="room-details">
         <h3>{{ data.name }}</h3>
+        <h4 class="room-price" v-if="horizontal == false">{{ data.price }}</h4>
         <h4>Features</h4>
         <div class="features">
           <span v-for="feature in data.features" :key="feature" >{{ feature }}</span> 
@@ -19,12 +20,20 @@
           <span>{{ data.guests.adults }} Adults</span> 
           <span>{{ data.guests.childrens }} Childrens</span> 
         </div>
+        <div v-if="horizontal == false">
+          <h4>Ratings</h4>
+          <div class="rating">
+            <span v-for="rating in data.ratings" :key="rating" >
+              <i class="bi bi-star-fill"></i>
+            </span> 
+          </div>
+        </div>
       </div>
       <div>
-        <div class="btns">
-          <h4 class="room-price">{{ data.price }}</h4>
-          <button class="teal-btn">Book Now</button>
-          <router-link :to="'/RoomDetails/'+data.id" class="btn-outline-dark router-link">More details</router-link>
+        <div class="btns" :class="{hor_btns : horizontal}">
+          <h4 class="room-price" v-if="horizontal">{{ data.price }}</h4>
+          <button class="teal-btn" :class="{hor_button : horizontal}">Book Now</button>
+          <router-link :to="'/RoomDetailsPage/'+data.id" class="btn-outline-dark router-link" :class="{hor_router_link : horizontal}">More details</router-link>
         </div>
       </div>
     </div>
@@ -35,7 +44,8 @@
 export default {
   name: 'HorizontalRoomCard',
   props:{
-    data : Object
+    data : Object,
+    horizontal : Boolean
   }
 }
 </script>
@@ -43,36 +53,31 @@ export default {
 <style scoped>
 
 .room-card{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  display: block;
   background-color: #fff;
   border-radius: 5px;
+  width: 350px;
   margin-bottom: 30px;
-  margin-left: 20px;
-  padding: 20px;
 
   div.room-img{
-    width: 45%;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 5px;
+    
     img{
-      border-radius: 5px;
       width: 100%;
     }
   }
 
   .room-content{
-    width: 55%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    width: 100%;
     padding: 15px;
 
-    h3,h4{
-      margin-bottom: 8px;
+    h3{
+      margin-bottom: 12px;
     }
-
-    .room-details{
-      margin-left: 10px;
+    h4{
+      margin-bottom: 8px;
     }
 
     .features, .facilities, .guests{
@@ -89,51 +94,86 @@ export default {
       }
     }
 
+    .rating{
+       margin-bottom: 12px;
+
+        i{
+          margin-right: 4px;
+          color: gold;
+        }
+    }
+
     .btns{
       display: flex;
-      flex-direction: column;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
-      margin-bottom: 10px;
 
       .router-link{
-        display: block;
-        width: 140px;
-        padding: 3px 0;
+        padding: 6px 10px;
         font-weight: 600;
-        text-align: center;
-        margin-bottom: 10px;
-      }
-
-      .room-price{
-        margin-bottom: 15px;
       }
 
       button{
-        display: block;
-        width: 140px;
-        padding: 3px 0;
+        border: 1px solid #2ec1ac;
+        padding: 6px 10px;
         font-weight: 600;
-        margin-bottom: 10px;
       }
     }
   }
 }
 
+.horizontalroomcard{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  margin-bottom: 30px;
+  margin-left: 20px;
+  width: 100%;
+}
+
+.hor_room_img{
+  width: 45%;
+}
+.hor_room_content{
+  width: 55%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hor_btns{
+  flex-direction: column;
+}
+
+.hor_button{
+  width: 140px;
+  padding: 3px 0;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.hor_router_link{
+  width: 140px;
+  padding: 3px 0;
+  font-weight: 600;
+  text-align: center;
+}
+
+
+
 @media (max-width:992px){
   .room-card{
-    margin: 0;
+    /* margin: 0; */
     margin-bottom: 30px;
 
     div.room-img{
-      width: 45%;
       img{
         width: 100%;
       }
     }
 
     .room-content{
-      width: 55%;
       padding: 15px;
     }
   }
@@ -152,7 +192,7 @@ export default {
 
     .room-content{
       width: 100%;
-      padding: 15px 0;
+      padding: 15px;
       flex-direction: column;
 
 
@@ -169,6 +209,11 @@ export default {
   
           .room-price{
             margin-bottom: 15px;
+          }
+
+          .router-link{
+            width: 100%;
+            text-align: center;
           }
   
           button{
