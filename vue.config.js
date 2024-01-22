@@ -3,6 +3,7 @@ const path = require('path');
 
 module.exports = defineConfig({
   transpileDependencies: true,
+  lintOnSave:true,
   css: {
     loaderOptions: {
       sass: {
